@@ -7,14 +7,14 @@ $selgroups = get_request_var('selected_groups');
 $selpaths  = get_request_var('selected_accesspaths');
 $selperm   = get_request_var('permission'); // TODO: There is no check, whether this var is given!
 
-if (count($selusers) == 1 && empty($selusers[0]))
-  $selusers = NULL;
-if (count($selgroups) == 1 && empty($selgroups[0]))
-  $selgroups = NULL;
-if (count($selpaths) == 1 && empty($selpaths[0]))
-  $selpaths = NULL;
+if (empty($selusers[0]))
+    array_shift($selusers);
+if (empty($selgroups[0]))
+    array_shift($selgroups);
+if (empty($selpaths[0]))
+    array_shift($selpaths);
 
-if( $selpaths == NULL || ( $selusers == NULL && $selgroups == NULL ) )
+if(empty($selpaths) || (empty($selusers) && empty($selgroups)))
 {
 	$appEngine->addException(new ValidationException(tr("You have to select a user or group and an access-path to perform this action.")));
 }

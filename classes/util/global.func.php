@@ -119,7 +119,7 @@ function CurrentLocale()
 	{
 		return $_COOKIE["locale"];
 	}
-	return "en_US";
+    return AppEngine()->getConfig()->getValue("GUI", "DefaultLocale", "en_US");
 }
 
 function SetValue($varName, $varValue)

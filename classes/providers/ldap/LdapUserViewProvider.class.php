@@ -277,7 +277,7 @@ class LdapUserViewProvider extends \IF_AbstractLdapConnector
 		return true;
 	}
 
-  public function getUserCount($withStarUser=true)
+  public function getUserCount($withStarUser=false)
   {
     return parent::objectSearchResultCount($this->connection, $this->users_base_dn, $this->users_search_filter);
   }
@@ -286,7 +286,7 @@ class LdapUserViewProvider extends \IF_AbstractLdapConnector
 	 * (non-PHPdoc)
 	 * @see svnadmin\core\interfaces.IUserViewProvider::getUsers()
 	 */
-	public function getUsers($withStarUser=true)
+	public function getUsers($withStarUser=false)
 	{
 		$ret = array();
 		$up_name = strtolower($this->users_attributes[0]);
@@ -659,7 +659,7 @@ class LdapUserViewProvider extends \IF_AbstractLdapConnector
 		if ($maxTime != 0 && $maxTime < 300) {
 			@ini_set('max_execution_time', 300);
 		}
-    
+
     // Check connection before doing the update.
     $connector = new \IF_AbstractLdapConnector();
     if (!$connector->connect($this->host_address, 0, $this->host_protocol_version)) {

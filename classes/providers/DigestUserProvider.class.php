@@ -25,7 +25,7 @@ namespace svnadmin\providers
     private $m_userfile = NULL;
     private $m_init_done = false;
     private static $m_instance = NULL;
-    
+
     public static function getInstance()
     {
       if( self::$m_instance == NULL )
@@ -34,7 +34,7 @@ namespace svnadmin\providers
       }
       return self::$m_instance;
     }
-    
+
     //////////////////////////////////////////////////////////////////////////////
     // -- Base interface implementations ----------------------------------------
     //////////////////////////////////////////////////////////////////////////////
@@ -54,27 +54,27 @@ namespace svnadmin\providers
       }
       return false;
     }
-    
+
     public function save()
     {
       return $this->m_userfile->writeToFile();
     }
-    
+
     public function isUpdateable()
     {
       return false;
     }
-    
+
     public function update()
     {
       return true;
     }
-    
+
     //////////////////////////////////////////////////////////////////////////////
     // -- IUserViewProvider ------------------------------------------------------
     //////////////////////////////////////////////////////////////////////////////
 
-    public function getUsers($withStarUser=true)
+    public function getUsers($withStarUser=false)
     {
       // Convert the list of user names into a list of User objects.
       $userNamesArray = $this->m_userfile->getUserList();
@@ -89,7 +89,7 @@ namespace svnadmin\providers
           array_push( $retList, $userObj );
         }
       }
-      
+
       // Staticly get the '*' user.
       if ($withStarUser)
       {
@@ -98,7 +98,7 @@ namespace svnadmin\providers
         $oUAll->name = '*';
         array_push( $retList, $oUAll );
       }
-      
+
       return $retList;
     }
 
@@ -106,12 +106,12 @@ namespace svnadmin\providers
     {
       return $this->m_userfile->userExists( $objUser->name );
     }
-    
+
     public function authenticate( $objUser, $password )
     {
       return $this->m_userfile->authenticate( $objUser->name, $password );
     }
-    
+
     //////////////////////////////////////////////////////////////////////////////
     // -- IUserEditProvider ------------------------------------------------------
     //////////////////////////////////////////////////////////////////////////////

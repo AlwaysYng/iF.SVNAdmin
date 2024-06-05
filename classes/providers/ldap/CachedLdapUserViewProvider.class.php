@@ -122,7 +122,7 @@ class CachedLdapUserViewProvider
 	 * (non-PHPdoc)
 	 * @see svnadmin\core\interfaces.IUserViewProvider::getUsers()
 	 */
-	public function getUsers($withStarUser=true)
+	public function getUsers($withStarUser=false)
 	{
 		$cached_users = $this->_cache->getData("users");
 		$users = array();

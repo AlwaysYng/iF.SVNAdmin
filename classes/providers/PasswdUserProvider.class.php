@@ -74,7 +74,7 @@ namespace svnadmin\providers
     // -- IUserViewProvider ------------------------------------------------------
     //////////////////////////////////////////////////////////////////////////////
 
-    public function getUsers($withStarUser=true)
+    public function getUsers($withStarUser=false)
     {
       // Convert the list of user names into a list of User objects.
       $userNamesArray = $this->m_userfile->getUserList();

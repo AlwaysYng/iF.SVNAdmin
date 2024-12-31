@@ -523,6 +523,23 @@ class LdapUserViewProvider extends \IF_AbstractLdapConnector
 		return true;
 	}
 
+    public function getGroupsOfSubgroup($objSubgroup)
+    {
+        $ret = array();
+        return $ret;
+    }
+
+    public function getSubgroupsOfGroup($objGroup)
+    {
+        $ret = array();
+        return $ret;
+    }
+
+    public function isSubgroupInGroup($objSubgroup, $objGroup)
+    {
+        return false;
+    }
+
 	/**************************************************************************
 	 * Protected helper methods.
 	 *************************************************************************/

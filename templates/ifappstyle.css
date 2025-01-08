@@ -18,6 +18,10 @@ input[type=submit]:hover { border-color:#000000; }
 input[type=checkbox] { border:0; }
 select{ padding:4px; }
 
+.select2 { min-width:180px; text-align:left; font-size:11px; }
+.select2-results { font-size:11px; }
+.select2-results__option { padding:4px !important; padding-left:8px !important; }
+
 ul,ol,li { list-style:none; }
 
 .clear { float:clear; }

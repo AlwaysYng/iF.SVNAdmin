@@ -465,3 +465,18 @@ $(function() {
 	});
   
 });
+
+/**
+ * Use Select2 instead of select.
+ */
+$(document).ready(function(){
+    // add class to all <select> elements, skipping the element with id locale-selector
+    $("select:not(#locale-selector)").addClass("select2");
+    // initialize Select2
+    $(".select2").select2({
+        allowClear: true,
+        minimumResultsForSearch: 10,
+        placeholder: "Select an option"
+    });
+});
+

@@ -5,9 +5,11 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta name="Author" content="Manuel Freiholz, insaneFactory.com">
 	<link rel="stylesheet" type="text/css" href="templates/ifappstyle.css">
+	<link rel="stylesheet" type="text/css" href="templates/select2.min.css"/>
 	<link rel="stylesheet" type="text/css" href="templates/jquery-ui-1.8.2.custom.css">
-	<script type="text/javascript" src="templates/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="templates/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="templates/jquery-ui-1.8.2.custom.min.js"></script>
+	<script type="text/javascript" src="templates/select2.min.js"></script>
 	<script type="text/javascript" src="templates/script.js"></script>
 </head>
 <body>
